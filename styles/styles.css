@@ -106,7 +106,7 @@ section {
           transform: translateY(0) scale(1);
 }
 
-.active {
+.active-section {
   display: block;
   -webkit-animation: scaleAnim 1s ease-in-out;
           animation: scaleAnim 1s ease-in-out;
@@ -114,8 +114,8 @@ section {
 
 @-webkit-keyframes scaleAnim {
   0% {
-    -webkit-transform: translateY(-100%) scaleY(0);
-            transform: translateY(-100%) scaleY(0);
+    -webkit-transform: translateY(-60%) scaleY(0);
+            transform: translateY(-60%) scaleY(0);
   }
   100% {
     -webkit-transform: translateY(0) scaleY(1);
@@ -125,8 +125,8 @@ section {
 
 @keyframes scaleAnim {
   0% {
-    -webkit-transform: translateY(-100%) scaleY(0);
-            transform: translateY(-100%) scaleY(0);
+    -webkit-transform: translateY(-60%) scaleY(0);
+            transform: translateY(-60%) scaleY(0);
   }
   100% {
     -webkit-transform: translateY(0) scaleY(1);
@@ -945,7 +945,13 @@ section {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-weight: 800;
-  font-size: 6.3rem;
+  font-size: 6rem;
+}
+
+@media screen and (max-width: 1920px) {
+  .bg-text {
+    font-size: 5rem;
+  }
 }
 
 @media screen and (max-width: 1432px) {
@@ -1099,7 +1105,7 @@ section {
     font-size: 2rem;
   }
   .main-title h2 span {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .main-title h2 .bg-text {
     font-size: 3rem;

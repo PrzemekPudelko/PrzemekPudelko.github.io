@@ -26,11 +26,11 @@ function PageTransitions() {
 
             //hide other sections
             sections.forEach((section) => {
-                section.classList.remove('active')
+                section.classList.remove('active-section')
             })
 
             const element = document.getElementById(id);
-            element.classList.add('active');
+            element.classList.add('active-section');
         }
     })
 

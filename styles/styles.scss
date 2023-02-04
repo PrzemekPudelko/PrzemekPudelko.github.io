@@ -100,11 +100,24 @@ section {
 }
 
 .active{
+    //display: block;
+    // animation: scaleAnim 1s ease-in-out;
+    // @keyframes scaleAnim {
+    //     0%{
+    //         transform: translateY(-60%) scaleY(0);
+    //     }
+    //     100%{
+    //         transform: translateY(0) scaleY(1);
+    //     }
+    // }
+}
+
+.active-section{
     display: block;
     animation: scaleAnim 1s ease-in-out;
     @keyframes scaleAnim {
         0%{
-            transform: translateY(-100%) scaleY(0);
+            transform: translateY(-60%) scaleY(0);
         }
         100%{
             transform: translateY(0) scaleY(1);
@@ -681,7 +694,7 @@ section {
             z-index: -1;
             transform: translate(-50%, -50%); //centers something
             font-weight: 800;
-            font-size: 6.3rem;
+            font-size: 6rem;
         }
     }
 }
