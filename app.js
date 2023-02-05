@@ -5,6 +5,9 @@ const allSections = document.querySelector('.main-content');
 const sectPortfolio = document.querySelector('.portfolio');
 const portfolioImages = sectPortfolio.querySelectorAll('.portfolio-item');
 
+var modal = document.getElementById('imgModal');
+var modalImg = document.getElementById("img01");
+
 function PageTransitions() {
     //Button click active class
     for(let i=0; i < sectBtn.length; i++) {
@@ -67,11 +70,38 @@ function PageTransitions() {
                 })
                 const element = document.getElementById(id);
                 element.classList.add('active-img');
-                //e.target.classList.add('active-img');
-                //portfolioItem.classList.add('active-img');
+
+                modal.style.display = "block";
+                modalImg.src = element.getElementsByTagName('img')[0].src;
             }
         }
     })
+
+    // Get the modal
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    // var img = document.querySelectorAll('.active-img');
+    // var captionText = document.getElementById("caption");
+    // img.onclick = function(){
+    //     modal.style.display = "block";
+    //     modalImg.src = this.src;
+    //     modalImg.alt = "Hello";
+    //     captionText.innerHTML = "Hello";
+    // }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+
+    window.onclick = function() {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 }
 
 PageTransitions();
