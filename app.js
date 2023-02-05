@@ -7,6 +7,7 @@ const portfolioImages = sectPortfolio.querySelectorAll('.portfolio-item');
 
 var modal = document.getElementById('imgModal');
 var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
 
 function PageTransitions() {
     //Button click active class
@@ -73,6 +74,7 @@ function PageTransitions() {
 
                 modal.style.display = "block";
                 modalImg.src = element.getElementsByTagName('img')[0].src;
+                captionText.innerHTML = element.getElementsByClassName('hover-items')[0].innerHTML;
             }
         }
     })
@@ -81,7 +83,6 @@ function PageTransitions() {
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
     // var img = document.querySelectorAll('.active-img');
-    // var captionText = document.getElementById("caption");
     // img.onclick = function(){
     //     modal.style.display = "block";
     //     modalImg.src = this.src;

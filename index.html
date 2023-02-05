@@ -472,9 +472,15 @@
     </div>
 
     <div id="imgModal" class="modal">
-        <span class="close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+            <div class="left-modal">
+                <img class="modal-img" id="img01">
+            </div>
+            <div class="right-modal">
+                <div id="caption"></div>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>
