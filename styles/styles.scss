@@ -112,6 +112,10 @@ section {
     // }
 }
 
+.active-img{
+    transform: scale(2);
+}
+
 .active-section{
     display: block;
     animation: scaleAnim 1s ease-in-out;
@@ -430,13 +434,13 @@ section {
     }
 }
 
-/*Portfolios*/
+/*Portfolio*/
 .port-text{
     padding: 2rem 0;
     text-align: center;
 }
 
-.portfolios{
+.portfolio{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
