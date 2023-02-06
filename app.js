@@ -5,6 +5,7 @@ const allSections = document.querySelector('.main-content');
 const sectPortfolio = document.querySelector('.portfolio');
 const portfolioImages = sectPortfolio.querySelectorAll('.portfolio-item');
 
+var controls = document.getElementsByClassName('controls')[0];
 var modal = document.getElementById('imgModal');
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
@@ -75,6 +76,7 @@ function PageTransitions() {
                 modal.style.display = "block";
                 modalImg.src = element.getElementsByTagName('img')[0].src;
                 captionText.innerHTML = element.getElementsByClassName('hover-items')[0].innerHTML;
+                controls.style.visibility = "hidden";
             }
         }
     })
@@ -96,11 +98,14 @@ function PageTransitions() {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
     modal.style.display = "none";
+    controls.style.visibility = "visible";
     }
 
     window.onclick = function() {
         if (event.target == modal) {
             modal.style.display = "none";
+            controls.style.visibility = "visible";
+
         }
     }
 }
