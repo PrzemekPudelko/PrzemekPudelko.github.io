@@ -617,6 +617,7 @@ section {
   font-size: 1rem;
   color: var(--color-artwork);
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .portfolio-item:hover .hover-items {
@@ -957,7 +958,7 @@ section {
   /* Stay in place */
   z-index: 1;
   /* Sit on top */
-  padding-top: 100px;
+  padding-top: 5px;
   /* Location of the box */
   left: 0;
   top: 0;
@@ -974,14 +975,18 @@ section {
 }
 
 .modal-content {
+  position: relative;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2fr 1fr;
       grid-template-columns: 2fr 1fr;
-  grid-gap: 1rem;
-  padding: 1rem;
-  width: 100%;
-  max-height: 90%;
+  grid-gap: 0rem;
+  padding: 0rem;
+  max-width: 100%;
+  max-height: 100%;
   margin: auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -999,8 +1004,8 @@ section {
 }
 
 .left-modal {
-  margin: 1rem 0;
-  max-height: 1000px;
+  margin: 0rem 2rem;
+  max-height: 900px;
   max-width: 100%;
 }
 
@@ -1019,34 +1024,6 @@ section {
   color: #ccc;
   padding: 10px 0;
   height: 150px;
-}
-
-/* Add Animation - Zoom in the Modal */
-.modal-content, #caption {
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {
-    -webkit-transform: scale(0);
-  }
-  to {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes zoom {
-  from {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
 }
 
 /* The Close Button */

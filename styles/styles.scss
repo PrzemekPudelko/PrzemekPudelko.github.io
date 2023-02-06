@@ -467,6 +467,7 @@ section {
                 font-size: 1rem;
                 color: var(--color-artwork);
                 margin-bottom: 1.5rem;
+                text-align: center;
             }
         }
     }
@@ -705,7 +706,7 @@ section {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 5px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -716,12 +717,15 @@ section {
 }
 
 .modal-content {
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-gap: 1rem;
-    padding: 1rem;
-    width: 100%;
-    max-height: 90%;
+    grid-gap: 0rem;
+    padding: 0rem;
+    max-width: 100%;
+    max-height: 100%;
     margin: auto;
     justify-content: center;
 }
@@ -736,8 +740,8 @@ section {
 }
 
 .left-modal{
-    margin: 1rem 0;
-    max-height: 1000px;
+    margin: 0rem 2rem;
+    max-height: 900px;
     max-width: 100%;
 }
 
@@ -758,23 +762,23 @@ section {
     height: 150px;
 }
 
-/* Add Animation - Zoom in the Modal */
-.modal-content, #caption {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
+// /* Add Animation - Zoom in the Modal */
+// .modal-content, #caption {
+//     -webkit-animation-name: zoom;
+//     -webkit-animation-duration: 0.6s;
+//     animation-name: zoom;
+//     animation-duration: 0.6s;
+// }
 
-@-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)}
-    to {-webkit-transform:scale(1)}
-}
+// @-webkit-keyframes zoom {
+//     from {-webkit-transform:scale(0)}
+//     to {-webkit-transform:scale(1)}
+// }
 
-@keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-}
+// @keyframes zoom {
+//     from {transform:scale(0)}
+//     to {transform:scale(1)}
+// }
 
 /* The Close Button */
 .close {
