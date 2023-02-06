@@ -101,13 +101,17 @@ function PageTransitions() {
     controls.style.visibility = "visible";
     }
 
-    window.onclick = function() {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            controls.style.visibility = "visible";
+    // window.onclick = function() {
+    //     if (event.target == modal) {
+    //         modal.style.display = "none";
+    //         controls.style.visibility = "visible";
+    //     }
+    // }
 
-        }
-    }
+    // modal.onclick = function() {
+    //     modal.style.display = "none";
+    //     controls.style.visibility = "visible";
+    // }
 }
 
 PageTransitions();

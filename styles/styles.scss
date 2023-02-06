@@ -466,8 +466,14 @@ section {
             h3{
                 font-size: 1rem;
                 color: var(--color-artwork);
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.0rem;
                 text-align: center;
+            }
+            h4{
+                font-size: 0.75rem;
+                color: var(--color-artwork);
+                margin-bottom: 1.0rem;
+                text-align: center; 
             }
         }
     }
@@ -743,11 +749,24 @@ section {
     margin: 0rem 2rem;
     max-height: 900px;
     max-width: 100%;
+    padding: 1rem;
 }
 
 .right-modal{
     margin: auto 0;
-    width: 50%;
+    width: 70%;
+    h3{
+        font-size: 1.5rem;
+        color: var(--color-artwork);
+        margin-bottom: 1.0rem;
+        text-align: center;
+    }
+    h4{
+        font-size: 1rem;
+        color: var(--color-artwork);
+        margin-bottom: 1.0rem;
+        text-align: center; 
+    }
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
