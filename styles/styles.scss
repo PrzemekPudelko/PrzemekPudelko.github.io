@@ -719,31 +719,29 @@ section {
     // grid-template-columns: 1fr 1fr;
     // grid-gap: 2rem;
     display: flex;
-    background-color: var(--color-primary);
+    //background-color: var(--color-primary);
     padding: 1rem;
     width: 90%;
     max-height: 90%;
     margin: auto;
+    justify-content: center;
 }
 
 /* Modal Content (Image) */
 .modal-img {
     margin: auto;
     display: block;
-    // width: 80%;
-    // height: 80%;
     object-fit: cover;
-    //max-width: 700px;
     max-height: 100%;
     max-width: 100%;
 }
 
 .left-modal{
-    flex: 3;
+    margin: 1rem 0;
 }
 
 .right-modal{
-    flex: 2;
+    margin: auto 0;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */

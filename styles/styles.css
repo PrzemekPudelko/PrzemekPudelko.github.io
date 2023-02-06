@@ -976,11 +976,13 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: var(--color-primary);
   padding: 1rem;
   width: 90%;
   max-height: 90%;
   margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* Modal Content (Image) */
@@ -994,15 +996,11 @@ section {
 }
 
 .left-modal {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  margin: 1rem 0;
 }
 
 .right-modal {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  margin: auto 0;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
