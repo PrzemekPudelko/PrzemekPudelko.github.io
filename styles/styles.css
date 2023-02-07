@@ -1253,15 +1253,12 @@ section {
   .main-title h2 .bg-text {
     font-size: 3.2rem;
   }
-  .right-contact {
+  .section {
     margin-bottom: 5rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .controls {
-    height: 10%;
-  }
   .controls .control {
     margin: 0.6rem;
     -webkit-transform: scale(0.8);
