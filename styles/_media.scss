@@ -74,13 +74,6 @@
         grid-template-columns: 1fr;
         padding-bottom: 6rem;
     }
-
-    .left-header{
-        .h-shape{
-            //display: none;
-        }
-    }
-
     .right-header{
         grid-row: 1;
         width: 80%;
@@ -113,7 +106,7 @@
         width: 100%;
         background-color: var(--color-grey-5);
         .control{
-            margin: 0.6rem 1em;
+            margin: 0.6rem 1rem;
         }
     }
     .modal-content{
@@ -144,6 +137,7 @@
     }
 
     .about-stats{
+        margin-bottom: 5rem;
         .progress-bars{
             grid-template-columns: 1fr;
         }
@@ -160,13 +154,31 @@
 
     .main-title{
         h2{
-            font-size: 1.5rem;
+            font-size: 2.8rem;
             span{
-                font-size: 1.5rem;
+                font-size: 2.8rem;
             }
             .bg-text{
-                font-size: 2rem;
+                font-size: 3.2rem;
             }
         }
+    }
+    .right-contact{
+        margin-bottom: 5rem;
+    }
+}
+@media screen and (max-width: 600px){
+    .controls{
+        height: 10%;
+        .control{
+            margin: 0.6rem;
+            transform: scale(0.8);
+        }
+    }
+    .contact-content-con .left-contact .contact-info .contact-item{
+        display: block;
+    }
+    .contact-item{
+        padding: 1rem;
     }
 }

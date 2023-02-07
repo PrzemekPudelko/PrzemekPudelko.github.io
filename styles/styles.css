@@ -1197,7 +1197,7 @@ section {
     background-color: var(--color-grey-5);
   }
   .controls .control {
-    margin: 0.6rem 1em;
+    margin: 0.6rem 1rem;
   }
   .modal-content {
     -ms-grid-columns: 1fr;
@@ -1229,6 +1229,9 @@ section {
         grid-template-columns: 1fr;
     padding-bottom: 6rem;
   }
+  .about-stats {
+    margin-bottom: 5rem;
+  }
   .about-stats .progress-bars {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1242,13 +1245,33 @@ section {
     padding: 2rem 2.5rem !important;
   }
   .main-title h2 {
-    font-size: 1.5rem;
+    font-size: 2.8rem;
   }
   .main-title h2 span {
-    font-size: 1.5rem;
+    font-size: 2.8rem;
   }
   .main-title h2 .bg-text {
-    font-size: 2rem;
+    font-size: 3.2rem;
+  }
+  .right-contact {
+    margin-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .controls {
+    height: 10%;
+  }
+  .controls .control {
+    margin: 0.6rem;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .contact-content-con .left-contact .contact-info .contact-item {
+    display: block;
+  }
+  .contact-item {
+    padding: 1rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */
