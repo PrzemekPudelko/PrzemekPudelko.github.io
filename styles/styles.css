@@ -6,6 +6,10 @@
   list-style-image: none;
 }
 
+p {
+  text-align: justify;
+}
+
 :root {
   --color-primary: #cec7c3de;
   --color-secondary: #d65317;
@@ -955,6 +959,9 @@ section {
           transform: translate(-50%, -50%);
   font-weight: 800;
   font-size: 6rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 /* The Modal (background) */
@@ -1076,7 +1083,7 @@ section {
 
 @media screen and (max-width: 1920px) {
   .bg-text {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 
@@ -1126,13 +1133,13 @@ section {
     padding-top: 2.5rem;
   }
   .main-title h2 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .main-title h2 span {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .main-title h2 .bg-text {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 
@@ -1192,6 +1199,13 @@ section {
   .controls .control {
     margin: 0.6rem 1em;
   }
+  .modal-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .modal-content .right-modal {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -1228,13 +1242,13 @@ section {
     padding: 2rem 2.5rem !important;
   }
   .main-title h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .main-title h2 span {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .main-title h2 .bg-text {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -5,6 +5,10 @@
     list-style-image: none;
 }
 
+p {
+    text-align: justify;
+}
+
 :root{
     --color-primary: #cec7c3de;
     --color-secondary: #d65317;
@@ -703,6 +707,7 @@ section {
             transform: translate(-50%, -50%); //centers something
             font-weight: 800;
             font-size: 6rem;
+            width: max-content;
         }
     }
 }
