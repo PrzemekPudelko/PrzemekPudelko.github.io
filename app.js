@@ -10,6 +10,29 @@ var modal = document.getElementById('imgModal');
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+    if (modal.style.display == "block") {
+        e = e || window.event;
+
+        if (e.keyCode == '38') {
+            // up arrow
+        }
+        else if (e.keyCode == '40') {
+            // down arrow
+        }
+        else if (e.keyCode == '37') {
+           // left arrow
+           prevImg();
+        }
+        else if (e.keyCode == '39') {
+           // right arrow
+           nextImg();
+        }
+    }
+}
+
 function PageTransitions() {
     //Button click active class
     for(let i=0; i < sectBtn.length; i++) {
