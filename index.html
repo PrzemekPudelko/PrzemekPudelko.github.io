@@ -220,7 +220,8 @@
                 <h2>My <span>Gallery</span><span class="bg-text">My Gallery</span></h2>
             </div>
             <p class="port-text">
-                Here is my personal gallery. These paintings and drawings include reproductions of master painters, as well as paintings from my own experience and imagination.
+                Here is my personal gallery. These paintings and drawings include reproductions of master painters, as well as paintings from my own experience and imagination. 
+                <br><br>Please make an inquiry if you are interested in purchasing one of these paintings.
             </p>
             
             <div class="portfolio">
@@ -555,8 +556,10 @@
     </div>
 
     <div id="imgModal" class="modal">
+        <span class="close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
         <div class="modal-content">
-            <span class="close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+            <a class="prev" id="prev" onclick="prevImg()">&#10094;</a>
+            <a class="next" id="next" onclick="nextImg()">&#10095;</a>
             <div class="left-modal">
                 <img class="modal-img" id="img01">
             </div>

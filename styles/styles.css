@@ -972,8 +972,6 @@ section {
   /* Stay in place */
   z-index: 1;
   /* Sit on top */
-  padding-top: 5px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
@@ -1043,6 +1041,39 @@ section {
   text-align: center;
 }
 
+/* Next & previous buttons */
+.prev,
+.next {
+  position: absolute;
+  padding: 0rem 1rem;
+  top: 50%;
+  width: auto;
+  color: #f1f1f1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 0 3px 3px 0;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.prev:focus,
+.next:hover,
+.next:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
 #caption {
   margin: auto;
@@ -1059,12 +1090,13 @@ section {
 .close {
   position: absolute;
   top: 15px;
-  right: 35px;
+  right: 25px;
   color: #f1f1f1;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  z-index: 1;
 }
 
 .close:hover,

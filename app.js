@@ -114,4 +114,42 @@ function PageTransitions() {
     // }
 }
 
+function prevImg(){
+    var currentImg = document.getElementsByClassName("active-img")[0];
+    var allImgs = document.getElementsByClassName("portfolio-item");
+    for(let i=0; i < allImgs.length; i++) {
+        if (allImgs[i].classList.contains('active-img')) {
+            var prevImgNum = i-1;
+            if (prevImgNum < 0) {
+                prevImgNum = allImgs.length - 1;
+            }
+            setNewImg(currentImg, allImgs, prevImgNum)
+            break;
+        }
+    }
+}
+
+function nextImg(){
+    var currentImg = document.getElementsByClassName("active-img")[0];
+    var allImgs = document.getElementsByClassName("portfolio-item");
+    for(let i=0; i < allImgs.length; i++) {
+        if (allImgs[i].classList.contains('active-img')) {
+            var nextImgNum = i+1;
+            if (nextImgNum >= allImgs.length) {
+                nextImgNum = 0;
+            }
+            setNewImg(currentImg, allImgs, nextImgNum)
+            break;
+        }
+    }
+}
+
+function setNewImg(currImg, allImgs, newImgNum) {
+    currImg.classList.remove('active-img');
+    newImg = allImgs[newImgNum];
+    newImg.classList.add('active-img');
+    modalImg.src = newImg.getElementsByTagName('img')[0].src;
+    captionText.innerHTML = newImg.getElementsByClassName('hover-items')[0].innerHTML;
+}
+
 PageTransitions();
