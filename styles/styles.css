@@ -1295,4 +1295,10 @@ section {
     padding: 1rem;
   }
 }
+
+@media screen and (max-height: 700px) {
+  .left-modal {
+    max-height: 600px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
