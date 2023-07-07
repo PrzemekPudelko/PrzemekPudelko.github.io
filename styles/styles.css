@@ -604,6 +604,7 @@ section {
 
 .portfolio .portfolio-item {
   position: relative;
+  display: none;
 }
 
 .portfolio .portfolio-item img {
@@ -651,6 +652,10 @@ section {
   color: var(--color-artwork);
   margin-bottom: 1.0rem;
   text-align: center;
+}
+
+.portfolio .show {
+  display: block;
 }
 
 .portfolio-item:hover .hover-items {

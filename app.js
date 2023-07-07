@@ -12,6 +12,7 @@ var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 
 document.onkeydown = checkKey;
+filterSelection("all");
 
 //Loop through all dropdown elements
 dropdowns.forEach(dropdown => {
@@ -50,6 +51,8 @@ dropdowns.forEach(dropdown => {
             });
             //Add active class to clicked option element
             option.classList.add('active-drop');
+            var filterString = selected.innerText.toLowerCase().replace(" ", "-");
+            filterSelection(filterString);
         });
     });
 })
@@ -146,7 +149,8 @@ function PageTransitions() {
 
 function prevImg(){
     var currentImg = document.getElementsByClassName("active-img")[0];
-    var allImgs = document.getElementsByClassName("portfolio-item");
+    var allImgs = document.getElementsByClassName("portfolio-item show");
+
     for(let i=0; i < allImgs.length; i++) {
         if (allImgs[i].classList.contains('active-img')) {
             var prevImgNum = i-1;
@@ -161,7 +165,7 @@ function prevImg(){
 
 function nextImg(){
     var currentImg = document.getElementsByClassName("active-img")[0];
-    var allImgs = document.getElementsByClassName("portfolio-item");
+    var allImgs = document.getElementsByClassName("portfolio-item show");
     for(let i=0; i < allImgs.length; i++) {
         if (allImgs[i].classList.contains('active-img')) {
             var nextImgNum = i+1;
@@ -180,6 +184,42 @@ function setNewImg(currImg, allImgs, newImgNum) {
     newImg.classList.add('active-img');
     modalImg.src = newImg.getElementsByTagName('img')[0].src;
     captionText.innerHTML = newImg.getElementsByClassName('hover-items')[0].innerHTML;
+}
+
+function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("portfolio-item");
+    if (c == "all") c = "";
+    // Add the "show" class to the filtered elements, and remove the "show" class from the elements that are not selected
+    for (i = 0; i < x.length; i++) {
+        removeClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+    }
+}
+
+// Show filtered elements
+function addClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+        }
+    }
+}
+
+// Hide elements that are not selected
+function removeClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while(arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+    }
+    element.className = arr1.join(" ");
 }
 
 PageTransitions();
