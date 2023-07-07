@@ -12,7 +12,8 @@ var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 
 document.onkeydown = checkKey;
-filterSelection("all");
+filterSelection("all-types all-years");
+const selArr = ["all-types","all-years"];
 
 //Loop through all dropdown elements
 dropdowns.forEach(dropdown => {
@@ -39,6 +40,12 @@ dropdowns.forEach(dropdown => {
         option.addEventListener('click', () => {
             //Change selected inner text to clicked option inner text
             selected.innerText = option.innerText;
+            if(selected.classList.contains("select-type")) {
+                selArr[0] = selected.innerText.toLowerCase().replace(" ", "-");
+            }
+            else if (selected.classList.contains("select-year")) {
+                selArr[1] = selected.innerText.toLowerCase().replace(" ", "-");
+            }
             //Add the clicked select styles to the select element
             select.classList.remove('select-clicked');
             //Remove the rotate styles from the caret element
@@ -51,7 +58,9 @@ dropdowns.forEach(dropdown => {
             });
             //Add active class to clicked option element
             option.classList.add('active-drop');
-            var filterString = selected.innerText.toLowerCase().replace(" ", "-");
+            //if(selected.innerText == "")
+            //var filterString = selected.innerText.toLowerCase().replace(" ", "-");
+            var filterString = selArr[0] + " " + selArr[1];
             filterSelection(filterString);
         });
     });
@@ -187,13 +196,18 @@ function setNewImg(currImg, allImgs, newImgNum) {
 }
 
 function filterSelection(c) {
-    var x, i;
+    var x, i, j, arr1;
     x = document.getElementsByClassName("portfolio-item");
-    if (c == "all") c = "";
+    arr1 = c.split(" ");
     // Add the "show" class to the filtered elements, and remove the "show" class from the elements that are not selected
     for (i = 0; i < x.length; i++) {
         removeClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+
+        if(c.includes("all-types all-years")) addClass(x[i], "show");
+        else if (c.includes("all-types") && x[i].classList.contains(arr1[1])) addClass(x[i], "show");
+        else if (c.includes("all-years") && x[i].classList.contains(arr1[0])) addClass(x[i], "show");
+        else if(x[i].classList.contains(arr1[0]) && x[i].classList.contains(arr1[1])) addClass(x[i], "show");
+        //if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
     }
 }
 
