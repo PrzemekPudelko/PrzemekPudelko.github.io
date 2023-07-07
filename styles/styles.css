@@ -312,15 +312,15 @@ section {
 .about-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(0, 1fr));
   padding-top: 3.5rem;
   padding-bottom: 5rem;
   height: 100%;
 }
 
 .about-container .left-about {
-  padding-right: 5rem;
+  padding-right: 4rem;
 }
 
 .about-container .left-about p {
@@ -337,9 +337,9 @@ section {
 .about-container .right-about {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1rem;
 }
 
 .about-container .right-about .about-item {
@@ -349,6 +349,8 @@ section {
   transition: all 0.4s ease-in-out;
   -webkit-box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
           box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .about-container .right-about .about-item:hover {
