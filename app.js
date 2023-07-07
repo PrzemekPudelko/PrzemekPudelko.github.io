@@ -4,6 +4,7 @@ const sectBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
 const sectPortfolio = document.querySelector('.portfolio');
 const portfolioImages = sectPortfolio.querySelectorAll('.portfolio-item');
+const dropdowns = document.querySelectorAll('.dropdown');
 
 var controls = document.getElementsByClassName('controls')[0];
 var modal = document.getElementById('imgModal');
@@ -11,6 +12,47 @@ var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 
 document.onkeydown = checkKey;
+
+//Loop through all dropdown elements
+dropdowns.forEach(dropdown => {
+    //Get inner elements for each dropdown
+    const select = dropdown.querySelector('.select');
+    const caret = dropdown.querySelector('.caret');
+    const menu = dropdown.querySelector('.menu');
+    const options = dropdown.querySelectorAll('.menu li');
+    const selected = dropdown.querySelector('.selected');
+
+    //Add a click event to the select element
+    select.addEventListener('click', () => {
+        //Add the clicked select styles to the select element
+        select.classList.toggle('select-clicked');
+        //Add the rotate styles to the caret element
+        caret.classList.toggle('caret-rotate');
+        //Add the open styles to the menu element
+        menu.classList.toggle('menu-open');
+    });
+
+    //Loop through all option elements
+    options.forEach(option => {
+        //Add a click event to the option element
+        option.addEventListener('click', () => {
+            //Change selected inner text to clicked option inner text
+            selected.innerText = option.innerText;
+            //Add the clicked select styles to the select element
+            select.classList.remove('select-clicked');
+            //Remove the rotate styles from the caret element
+            caret.classList.remove('caret-rotate');
+            //Remove the open styles from the menu element
+            menu.classList.remove('menu-open');
+            //Remove active class from all option elements
+            options.forEach(option => {
+                option.classList.remove('active-drop')
+            });
+            //Add active class to clicked option element
+            option.classList.add('active-drop');
+        });
+    });
+})
 
 function checkKey(e) {
     if (modal.style.display == "block") {
@@ -43,17 +85,6 @@ function PageTransitions() {
         })
     }
     
-
-    // for(let i=0; i < portfolioImages.length; i++) {
-    //     portfolioImages[i].addEventListener('click', function(){
-    //         let currentImg = document.querySelectorAll('.active-img');
-    //         if(currentImg.length > 0){
-    //             currentImg[0].className = currentImg[0].className.replace('active-img', '');
-    //         }
-    //         this.className += ' active-img';
-    //     })
-    // }
-
     //Sections Active class
     allSections.addEventListener('click',(e) => {
         const id = e.target.dataset.id;
@@ -103,18 +134,6 @@ function PageTransitions() {
             }
         }
     })
-
-    // Get the modal
-
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    // var img = document.querySelectorAll('.active-img');
-    // img.onclick = function(){
-    //     modal.style.display = "block";
-    //     modalImg.src = this.src;
-    //     modalImg.alt = "Hello";
-    //     captionText.innerHTML = "Hello";
-    // }
-
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
@@ -123,18 +142,6 @@ function PageTransitions() {
     modal.style.display = "none";
     controls.style.visibility = "visible";
     }
-
-    // window.onclick = function() {
-    //     if (event.target == modal) {
-    //         modal.style.display = "none";
-    //         controls.style.visibility = "visible";
-    //     }
-    // }
-
-    // modal.onclick = function() {
-    //     modal.style.display = "none";
-    //     controls.style.visibility = "visible";
-    // }
 }
 
 function prevImg(){

@@ -1128,6 +1128,118 @@ section {
   cursor: pointer;
 }
 
+.dropdowns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.dropdowns .dropdown {
+  min-width: 15em;
+  position: relative;
+  margin: 2em;
+}
+
+.dropdowns .dropdown * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.dropdowns .select {
+  background: var(--color-grey-4);
+  color: var(--color-white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px var(--color-grey-4) solid;
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+.dropdowns .select-clicked {
+  border: 2px var(--color-grey-3) solid;
+  -webkit-box-shadow: 0 0 0.8em var(--color-grey-3);
+          box-shadow: 0 0 0.8em var(--color-grey-3);
+}
+
+.dropdowns .select:hover {
+  background: var(--color-grey-3);
+}
+
+.dropdowns .caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--color-white);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.dropdowns .caret-rotate {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.dropdowns .menu {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background: var(--color-grey-4);
+  border: 1px var(--color-grey-4) solid;
+  -webkit-box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  color: var(--color-white);
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.dropdowns .menu li {
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.dropdowns .menu li:hover {
+  background: var(--color-grey-5);
+}
+
+.dropdowns .active-drop {
+  background: var(--color-grey-3);
+}
+
+.dropdowns .menu-open {
+  display: block;
+  opacity: 1;
+}
+
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px) {
   .modal-content {
