@@ -12,8 +12,8 @@ var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 
 document.onkeydown = checkKey;
-filterSelection("all-types all-years");
-const selArr = ["all-types","all-years"];
+filterSelection("all-types all-themes all-materials all-years");
+const selArr = ["all-types", "all-themes", "all-materials", "all-years"];
 
 //Loop through all dropdown elements
 dropdowns.forEach(dropdown => {
@@ -43,8 +43,14 @@ dropdowns.forEach(dropdown => {
             if(selected.classList.contains("select-type")) {
                 selArr[0] = selected.innerText.toLowerCase().replace(" ", "-");
             }
-            else if (selected.classList.contains("select-year")) {
+            if(selected.classList.contains("select-theme")) {
                 selArr[1] = selected.innerText.toLowerCase().replace(" ", "-");
+            }
+            if(selected.classList.contains("select-material")) {
+                selArr[2] = selected.innerText.toLowerCase().replace(" ", "-");
+            }
+            else if (selected.classList.contains("select-year")) {
+                selArr[3] = selected.innerText.toLowerCase().replace(" ", "-");
             }
             //Add the clicked select styles to the select element
             select.classList.remove('select-clicked');
@@ -58,9 +64,7 @@ dropdowns.forEach(dropdown => {
             });
             //Add active class to clicked option element
             option.classList.add('active-drop');
-            //if(selected.innerText == "")
-            //var filterString = selected.innerText.toLowerCase().replace(" ", "-");
-            var filterString = selArr[0] + " " + selArr[1];
+            var filterString = selArr[0] + " " + selArr[1] + " " + selArr[2] + " " + selArr[3];
             filterSelection(filterString);
         });
     });
@@ -203,11 +207,22 @@ function filterSelection(c) {
     for (i = 0; i < x.length; i++) {
         removeClass(x[i], "show");
 
-        if(c.includes("all-types all-years")) addClass(x[i], "show");
-        else if (c.includes("all-types") && x[i].classList.contains(arr1[1])) addClass(x[i], "show");
-        else if (c.includes("all-years") && x[i].classList.contains(arr1[0])) addClass(x[i], "show");
-        else if(x[i].classList.contains(arr1[0]) && x[i].classList.contains(arr1[1])) addClass(x[i], "show");
-        //if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+        if(c.includes("all-types all-themes all-materials all-years")) addClass(x[i], "show");
+        else if (c.includes("all-types") && c.includes("all-themes") && c.includes("all-materials") && x[i].classList.contains(arr1[3])) addClass(x[i], "show");
+        else if (c.includes("all-types") && c.includes("all-themes") && c.includes("all-years") && x[i].classList.contains(arr1[2])) addClass(x[i], "show");
+        else if (c.includes("all-types") && c.includes("all-materials") && c.includes("all-years") && x[i].classList.contains(arr1[1])) addClass(x[i], "show");
+        else if (c.includes("all-themes") && c.includes("all-materials") && c.includes("all-years") && x[i].classList.contains(arr1[0])) addClass(x[i], "show");
+        else if (c.includes("all-types") && c.includes("all-themes") && x[i].classList.contains(arr1[2]) && x[i].classList.contains(arr1[3])) addClass(x[i], "show");
+        else if (c.includes("all-types") && c.includes("all-materials") && x[i].classList.contains(arr1[1]) && x[i].classList.contains(arr1[3])) addClass(x[i], "show");
+        else if (c.includes("all-types") && c.includes("all-years") && x[i].classList.contains(arr1[1]) && x[i].classList.contains(arr1[2])) addClass(x[i], "show");
+        else if (c.includes("all-themes") && c.includes("all-materials") && x[i].classList.contains(arr1[0]) && x[i].classList.contains(arr1[3])) addClass(x[i], "show");
+        else if (c.includes("all-themes") && c.includes("all-years") && x[i].classList.contains(arr1[0]) && x[i].classList.contains(arr1[2])) addClass(x[i], "show");
+        else if (c.includes("all-materials") && c.includes("all-years") && x[i].classList.contains(arr1[0]) && x[i].classList.contains(arr1[1])) addClass(x[i], "show");
+        else if (c.includes("all-types") && x[i].classList.contains(arr1[1]) && x[i].classList.contains(arr1[2]) && x[i].classList.contains(arr1[3])) addClass(x[i], "show");
+        else if (c.includes("all-themes") && x[i].classList.contains(arr1[0]) && x[i].classList.contains(arr1[2]) && x[i].classList.contains(arr1[3])) addClass(x[i], "show");
+        else if (c.includes("all-materials") && x[i].classList.contains(arr1[0]) && x[i].classList.contains(arr1[1]) && x[i].classList.contains(arr1[3])) addClass(x[i], "show");
+        else if (c.includes("all-years") && x[i].classList.contains(arr1[0]) && x[i].classList.contains(arr1[1]) && x[i].classList.contains(arr1[2])) addClass(x[i], "show");
+        else if (x[i].classList.contains(arr1[0]) && x[i].classList.contains(arr1[1]) && x[i].classList.contains(arr1[2]) && x[i].classList.contains(arr1[3])) addClass(x[i], "show");
     }
 }
 
