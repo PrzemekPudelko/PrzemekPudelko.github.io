@@ -337,8 +337,10 @@ section {
 .about-container .right-about {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(0, 1fr))[1];
-      grid-template-columns: repeat(1, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: -webkit-max-content;
+  grid-auto-rows: max-content;
   grid-gap: 1rem;
 }
 
@@ -378,6 +380,14 @@ section {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.about-container .right-about .about-item .centered {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-secondary);
+  text-align: center;
+  margin: -5px;
 }
 
 .about-container .right-about .about-item .abt-text {
@@ -1239,9 +1249,12 @@ section {
             transform: translateX(-50%);
     width: 100%;
     background-color: var(--color-grey-5);
+    max-height: 100px;
   }
   .controls .control {
     margin: 0.6rem 1rem;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
   }
   .modal-content {
     -ms-grid-columns: 1fr;
@@ -1303,10 +1316,13 @@ section {
 }
 
 @media screen and (max-width: 600px) {
+  .controls {
+    max-height: 80px;
+  }
   .controls .control {
     margin: 0.6rem;
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
   }
   .contact-content-con .left-contact .contact-info .contact-item {
     display: block;
