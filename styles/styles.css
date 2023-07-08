@@ -383,7 +383,7 @@ section {
 }
 
 .about-container .right-about .about-item .centered {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--color-secondary);
   text-align: center;
@@ -1150,7 +1150,7 @@ section {
 .dropdowns .dropdown {
   min-width: 15em;
   position: relative;
-  margin: 2em;
+  margin: 0.5em;
 }
 
 .dropdowns .dropdown * {
@@ -1258,12 +1258,23 @@ section {
   }
 }
 
-@media screen and (max-width: 1432px) {
+@media screen and (max-width: 1600px) {
   header {
     padding: 0 !important;
   }
   section {
     padding: 7rem 11rem;
+  }
+}
+
+@media screen and (max-width: 1432px) {
+  .about-container .right-about {
+    -ms-grid-columns: (minmax(0, 1fr))[1];
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-gap: 0.5rem;
+  }
+  .about-container .right-about .abt-quad img {
+    max-height: 225px;
   }
   .contact-content-con {
     -webkit-box-orient: vertical;
@@ -1302,6 +1313,13 @@ section {
   }
   .about-container .right-about {
     padding-top: 2.5rem;
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .about-container .abt-quad img {
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
   }
   .main-title h2 {
     font-size: 3rem;

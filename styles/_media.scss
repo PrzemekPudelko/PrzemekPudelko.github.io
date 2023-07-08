@@ -4,12 +4,34 @@
     }
 }
 
-@media screen and (max-width: 1432px) {
+@media screen and (max-width: 1600px) {
     header{
         padding: 0 !important;
     }
     section{
         padding: 7rem 11rem;
+    }
+}
+
+@media screen and (max-width: 1432px) {
+    .about-container{
+        .right-about{
+            grid-template-columns: repeat(1, minmax(0,1fr));
+            grid-gap: 0.5rem;
+            .abt-quad{
+                img{
+                    max-height: 225px;
+                }
+            }
+            //grid-template-rows: 250px;
+            // grid
+            // .about-item .about-quads{
+            //     max-height: 250px;
+            // }
+        }
+        // .right-about .about-item .about-quad img{
+        //     max-height: 250px;
+        // }
     }
 
     .contact-content-con{
@@ -43,6 +65,12 @@
         grid-template-columns: 1fr;
         .right-about{
             padding-top: 2.5rem;
+            grid-template-columns: repeat(2, minmax(0,1fr))
+        }
+        .abt-quad{
+            img{
+                max-height: max-content;
+            }
         }
     }
     .main-title{
