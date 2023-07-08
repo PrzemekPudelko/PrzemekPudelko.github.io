@@ -2,6 +2,7 @@ const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.controls');
 const sectBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
+const sectrightAbout = document.querySelector('.right-about');
 const sectPortfolio = document.querySelector('.portfolio');
 const portfolioImages = sectPortfolio.querySelectorAll('.portfolio-item');
 const dropdowns = document.querySelectorAll('.dropdown');
@@ -159,6 +160,41 @@ function PageTransitions() {
     controls.style.visibility = "visible";
     }
 }
+
+    sectrightAbout.addEventListener('click',(e) => {
+        var aboutElement = e.target;
+        var aboutItem = aboutElement.closest(".about-item");
+        if(aboutItem) {
+            document.getElementById("li-all-materials").click();
+            document.getElementById("li-all-years").click();
+            var aboutId = aboutItem.id;
+            if(aboutId == "about-illustrations") {
+                document.getElementById("li-all-themes").click();
+                document.getElementById("li-illustrations").click();
+                //filterSelection("all-types landscapes all-materials all-years");
+                //selected.classList.contains("select-theme")              
+            }
+            else {
+                document.getElementById("li-all-types").click();
+                if(aboutId == "about-landscapes") {
+                    document.getElementById("li-landscapes").click();
+                }
+                else if(aboutId == "about-still-life") {
+                    document.getElementById("li-still-life").click();
+                }
+                else if(aboutId == "about-portraits") {
+                    document.getElementById("li-portraits").click();
+                }
+                else if(aboutId == "about-iconography") {
+                    document.getElementById("li-iconography").click();
+                }
+                else if(aboutId == "about-reproductions") {
+                    document.getElementById("li-reproductions").click();
+                }
+            }
+            document.getElementById("portfolio-btn").click();
+        }
+    })
 
 function prevImg(){
     var currentImg = document.getElementsByClassName("active-img")[0];
