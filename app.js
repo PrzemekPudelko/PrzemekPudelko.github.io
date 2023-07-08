@@ -43,6 +43,11 @@ dropdowns.forEach(dropdown => {
             selected.innerText = option.innerText;
             if(selected.classList.contains("select-type")) {
                 selArr[0] = selected.innerText.toLowerCase().replace(" ", "-");
+                if(selected.innerText == "Illustrations" || selected.innerText == "Drawings") {
+                    document.getElementById("li-all-themes").click();
+                    document.getElementById("li-all-materials").click();
+                    document.getElementById("li-all-years").click();
+                }
             }
             if(selected.classList.contains("select-theme")) {
                 selArr[1] = selected.innerText.toLowerCase().replace(" ", "-");
