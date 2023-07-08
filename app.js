@@ -120,6 +120,7 @@ function PageTransitions() {
     
                 const element = document.getElementById(id);
                 element.classList.add('active-section');
+                window.scrollTo(0,0);
             }
         }
     })
