@@ -1273,9 +1273,6 @@ section {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     grid-gap: 0.5rem;
   }
-  .about-container .right-about .abt-quad img {
-    max-height: 225px;
-  }
   .contact-content-con {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
