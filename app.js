@@ -55,6 +55,7 @@ dropdowns.forEach(dropdown => {
             selected.innerText = option.innerText;
             if(selected.classList.contains("select-type")) {
                 selArr[0] = option.id;
+                sessionStorage.setItem("lastType", option.id)
                 if(option.id == "illustrations" || option.id == "drawings") {
                     document.getElementById("all-themes").click();
                     document.getElementById("all-materials").click();
@@ -63,12 +64,15 @@ dropdowns.forEach(dropdown => {
             }
             if(selected.classList.contains("select-theme")) {
                 selArr[1] = option.id;
+                sessionStorage.setItem("lastTheme", option.id)
             }
             if(selected.classList.contains("select-material")) {
                 selArr[2] = option.id;
+                sessionStorage.setItem("lastMaterial", option.id)
             }
             else if (selected.classList.contains("select-year")) {
                 selArr[3] = option.id;
+                sessionStorage.setItem("lastYear", option.id)
             }
             //Add the clicked select styles to the select element
             select.classList.remove('select-clicked');
@@ -88,6 +92,8 @@ dropdowns.forEach(dropdown => {
     });
 })
 
+// Improve this (filterSelection, update text all at once)
+// Also save dark/light mode
 if (lastSect != null) {
     let lastType = sessionStorage.getItem("lastType");
     let lastTheme = sessionStorage.getItem("lastTheme");
@@ -100,8 +106,18 @@ if (lastSect != null) {
         document.getElementById(lastYear).click();
     }
     else {
-        filterSelection("all-types all-themes all-materials all-years");
+        document.getElementById("all-types").click();
+        document.getElementById("all-themes").click();
+        document.getElementById("all-materials").click();
+        document.getElementById("all-years").click();
+        //filterSelection("all-types all-themes all-materials all-years");
     }
+}
+else{
+    document.getElementById("all-types").click();
+    document.getElementById("all-themes").click();
+    document.getElementById("all-materials").click();
+    document.getElementById("all-years").click();
 }
 
 function checkKey(e) {
@@ -132,6 +148,7 @@ function PageTransitions() {
             let currentBtn = document.querySelectorAll('.active-btn');
             currentBtn[0].className = currentBtn[0].className.replace('active-btn', '');
             this.className += ' active-btn';
+            sessionStorage.setItem("lastBtn", this.id);
         })
     }
     
@@ -153,6 +170,7 @@ function PageTransitions() {
     
                 const element = document.getElementById(id);
                 element.classList.add('active-section');
+                sessionStorage.setItem("lastSect", element.id);
                 window.scrollTo(0,0);
             }
         }
@@ -168,25 +186,12 @@ function PageTransitions() {
     //Toggle Language
     const langBtn = document.querySelector('.lang-btn');
     langBtn.addEventListener('click',() => {
-        let currentBtn = document.querySelectorAll('.active-btn');
-        let currentSect = document.querySelectorAll('.active-section');
-        sessionStorage.setItem("lastBtn", currentBtn[0].id);
-        sessionStorage.setItem("lastSect", currentSect[0].id);
-        let currentType = document.getElementById("dropdown-type").querySelectorAll('.active-drop');
-        let currentTheme = document.getElementById("dropdown-theme").querySelectorAll('.active-drop');
-        let currentMaterial = document.getElementById("dropdown-material").querySelectorAll('.active-drop');
-        let currentYear = document.getElementById("dropdown-year").querySelectorAll('.active-drop');
-
-        sessionStorage.setItem("lastType", currentType[0].id)
-        sessionStorage.setItem("lastTheme", currentTheme[0].id)
-        sessionStorage.setItem("lastMaterial", currentMaterial[0].id)
-        sessionStorage.setItem("lastYear", currentYear[0].id)
-        if (document.documentElement.lang === "pl-PL") {
-            window.location = 'index.html';
-        } 
-        else if (document.documentElement.lang === "en") {
-            window.location = 'pl-index.html';
-          }
+    if (document.documentElement.lang === "pl-PL") {
+        window.location = 'index.html';
+    } 
+    else if (document.documentElement.lang === "en") {
+        window.location = 'pl-index.html';
+    }
     })
 
     //Enlarge Image
