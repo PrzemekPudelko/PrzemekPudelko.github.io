@@ -137,6 +137,17 @@ function PageTransitions() {
         element.classList.toggle('light-mode');
     })
 
+    //Toggle Language
+    const langBtn = document.querySelector('.lang-btn');
+    langBtn.addEventListener('click',() => {
+        if (document.documentElement.lang === "pl-PL") {
+            window.location = 'index.html';
+        } 
+        else if (document.documentElement.lang === "en") {
+            window.location = 'pl-index.html';
+          }
+    })
+
     //Enlarge Image
     sectPortfolio.addEventListener('click',(e) => {
         const thisElement = e.target;

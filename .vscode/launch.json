@@ -15,7 +15,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "c:\\PersonalSandbox\\PortfolioOlgi\\index.html"
+            "file": "c:\\PersonalSandbox\\PrzemekPudelko.github.io\\index.html"
         }
     ]
 }
