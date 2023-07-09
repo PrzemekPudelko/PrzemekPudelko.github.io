@@ -1,3 +1,15 @@
+let lastBtn = sessionStorage.getItem("lastBtn");
+let lastSect = sessionStorage.getItem("lastSect");
+if (lastBtn != null && lastSect != null) {
+    document.getElementById(lastBtn).classList.add("active-btn");
+    document.getElementById(lastSect).classList.add("active-section");
+}
+else {
+    document.getElementById("home-btn").classList.add("active-btn");
+    document.getElementById("home").classList.add("active-section");
+}
+
+
 const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.controls');
 const sectBtn = document.querySelectorAll('.control');
@@ -141,6 +153,10 @@ function PageTransitions() {
     //Toggle Language
     const langBtn = document.querySelector('.lang-btn');
     langBtn.addEventListener('click',() => {
+        let currentBtn = document.querySelectorAll('.active-btn');
+        let currentSect = document.querySelectorAll('.active-section');
+        sessionStorage.setItem("lastBtn", currentBtn[0].id);
+        sessionStorage.setItem("lastSect", currentSect[0].id);
         if (document.documentElement.lang === "pl-PL") {
             window.location = 'index.html';
         } 
