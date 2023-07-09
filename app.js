@@ -1,5 +1,6 @@
 let lastBtn = sessionStorage.getItem("lastBtn");
 let lastSect = sessionStorage.getItem("lastSect");
+const selArr = ["all-types", "all-themes", "all-materials", "all-years"];
 if (lastBtn != null && lastSect != null) {
     document.getElementById(lastBtn).classList.add("active-btn");
     document.getElementById(lastSect).classList.add("active-section");
@@ -7,6 +8,7 @@ if (lastBtn != null && lastSect != null) {
 else {
     document.getElementById("home-btn").classList.add("active-btn");
     document.getElementById("home").classList.add("active-section");
+    filterSelection("all-types all-themes all-materials all-years");
 }
 
 
@@ -26,8 +28,6 @@ var captionText = document.getElementById("caption");
 var upperbtns = document.getElementsByClassName('upper-btns')[0];
 
 document.onkeydown = checkKey;
-filterSelection("all-types all-themes all-materials all-years");
-const selArr = ["all-types", "all-themes", "all-materials", "all-years"];
 
 //Loop through all dropdown elements
 dropdowns.forEach(dropdown => {
@@ -88,6 +88,17 @@ dropdowns.forEach(dropdown => {
         });
     });
 })
+
+if (lastSect != null) {
+    let lastType = sessionStorage.getItem("lastType");
+    let lastTheme = sessionStorage.getItem("lastTheme");
+    let lastMaterial = sessionStorage.getItem("lastMaterial");
+    let lastYear = sessionStorage.getItem("lastYear");
+    document.getElementById(lastType).click();
+    document.getElementById(lastTheme).click();
+    document.getElementById(lastMaterial).click();
+    document.getElementById(lastYear).click();
+}
 
 function checkKey(e) {
     if (modal.style.display == "block") {
@@ -157,6 +168,17 @@ function PageTransitions() {
         let currentSect = document.querySelectorAll('.active-section');
         sessionStorage.setItem("lastBtn", currentBtn[0].id);
         sessionStorage.setItem("lastSect", currentSect[0].id);
+        if(currentSect[0].id == "portfolio") {
+            let currentType = document.getElementById("dropdown-type").querySelectorAll('.active-drop');
+            let currentTheme = document.getElementById("dropdown-theme").querySelectorAll('.active-drop');
+            let currentMaterial = document.getElementById("dropdown-material").querySelectorAll('.active-drop');
+            let currentYear = document.getElementById("dropdown-year").querySelectorAll('.active-drop');
+
+            sessionStorage.setItem("lastType", currentType[0].id)
+            sessionStorage.setItem("lastTheme", currentTheme[0].id)
+            sessionStorage.setItem("lastMaterial", currentMaterial[0].id)
+            sessionStorage.setItem("lastYear", currentYear[0].id)
+        }
         if (document.documentElement.lang === "pl-PL") {
             window.location = 'index.html';
         } 
