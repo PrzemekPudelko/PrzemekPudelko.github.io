@@ -11,7 +11,6 @@ else {
     filterSelection("all-types all-themes all-materials all-years");
 }
 
-
 const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.controls');
 const sectBtn = document.querySelectorAll('.control');
@@ -94,10 +93,15 @@ if (lastSect != null) {
     let lastTheme = sessionStorage.getItem("lastTheme");
     let lastMaterial = sessionStorage.getItem("lastMaterial");
     let lastYear = sessionStorage.getItem("lastYear");
-    document.getElementById(lastType).click();
-    document.getElementById(lastTheme).click();
-    document.getElementById(lastMaterial).click();
-    document.getElementById(lastYear).click();
+    if (lastType != null) {
+        document.getElementById(lastType).click();
+        document.getElementById(lastTheme).click();
+        document.getElementById(lastMaterial).click();
+        document.getElementById(lastYear).click();
+    }
+    else {
+        filterSelection("all-types all-themes all-materials all-years");
+    }
 }
 
 function checkKey(e) {
@@ -168,17 +172,15 @@ function PageTransitions() {
         let currentSect = document.querySelectorAll('.active-section');
         sessionStorage.setItem("lastBtn", currentBtn[0].id);
         sessionStorage.setItem("lastSect", currentSect[0].id);
-        if(currentSect[0].id == "portfolio") {
-            let currentType = document.getElementById("dropdown-type").querySelectorAll('.active-drop');
-            let currentTheme = document.getElementById("dropdown-theme").querySelectorAll('.active-drop');
-            let currentMaterial = document.getElementById("dropdown-material").querySelectorAll('.active-drop');
-            let currentYear = document.getElementById("dropdown-year").querySelectorAll('.active-drop');
+        let currentType = document.getElementById("dropdown-type").querySelectorAll('.active-drop');
+        let currentTheme = document.getElementById("dropdown-theme").querySelectorAll('.active-drop');
+        let currentMaterial = document.getElementById("dropdown-material").querySelectorAll('.active-drop');
+        let currentYear = document.getElementById("dropdown-year").querySelectorAll('.active-drop');
 
-            sessionStorage.setItem("lastType", currentType[0].id)
-            sessionStorage.setItem("lastTheme", currentTheme[0].id)
-            sessionStorage.setItem("lastMaterial", currentMaterial[0].id)
-            sessionStorage.setItem("lastYear", currentYear[0].id)
-        }
+        sessionStorage.setItem("lastType", currentType[0].id)
+        sessionStorage.setItem("lastTheme", currentTheme[0].id)
+        sessionStorage.setItem("lastMaterial", currentMaterial[0].id)
+        sessionStorage.setItem("lastYear", currentYear[0].id)
         if (document.documentElement.lang === "pl-PL") {
             window.location = 'index.html';
         } 
@@ -229,9 +231,7 @@ function PageTransitions() {
             var aboutId = aboutItem.id;
             if(aboutId == "about-illustrations") {
                 document.getElementById("all-themes").click();
-                document.getElementById("illustrations").click();
-                //filterSelection("all-types landscapes all-materials all-years");
-                //selected.classList.contains("select-theme")              
+                document.getElementById("illustrations").click();           
             }
             else {
                 document.getElementById("all-types").click();
