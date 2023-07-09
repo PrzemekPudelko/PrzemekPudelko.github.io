@@ -212,8 +212,7 @@ section {
 .upper-btns .upper-btn {
   width: 70px;
   height: 70px;
-  padding: 0.2rem;
-  margin: 0 0.7rem;
+  margin: 0 0.5rem;
   border-radius: 50%;
   background-color: var(--color-grey-4);
   cursor: pointer;
@@ -241,6 +240,10 @@ section {
   font-size: 1.4rem;
   color: var(--color-grey-2);
   pointer-events: none;
+}
+
+.upper-btns .lang-btn p {
+  font-size: larger;
 }
 
 /*Header-content*/
@@ -1417,6 +1420,11 @@ section {
     -webkit-transform: scale(0.85);
             transform: scale(0.85);
   }
+  .upper-btns .upper-btn {
+    margin: 0.2rem;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
   .modal-content {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1482,6 +1490,11 @@ section {
   }
   .controls .control {
     margin: 0.6rem;
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  .upper-btns .upper-btn {
+    margin: 0.1rem;
     -webkit-transform: scale(0.75);
             transform: scale(0.75);
   }

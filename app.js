@@ -11,6 +11,7 @@ var controls = document.getElementsByClassName('controls')[0];
 var modal = document.getElementById('imgModal');
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
+var upperbtns = document.getElementsByClassName('upper-btns')[0];
 
 document.onkeydown = checkKey;
 filterSelection("all-types all-themes all-materials all-years");
@@ -42,21 +43,21 @@ dropdowns.forEach(dropdown => {
             //Change selected inner text to clicked option inner text
             selected.innerText = option.innerText;
             if(selected.classList.contains("select-type")) {
-                selArr[0] = selected.innerText.toLowerCase().replace(" ", "-");
-                if(selected.innerText == "Illustrations" || selected.innerText == "Drawings") {
-                    document.getElementById("li-all-themes").click();
-                    document.getElementById("li-all-materials").click();
-                    document.getElementById("li-all-years").click();
+                selArr[0] = option.id;
+                if(option.id == "illustrations" || option.id == "drawings") {
+                    document.getElementById("all-themes").click();
+                    document.getElementById("all-materials").click();
+                    document.getElementById("all-years").click();
                 }
             }
             if(selected.classList.contains("select-theme")) {
-                selArr[1] = selected.innerText.toLowerCase().replace(" ", "-");
+                selArr[1] = option.id;
             }
             if(selected.classList.contains("select-material")) {
-                selArr[2] = selected.innerText.toLowerCase().replace(" ", "-");
+                selArr[2] = option.id;
             }
             else if (selected.classList.contains("select-year")) {
-                selArr[3] = selected.innerText.toLowerCase().replace(" ", "-");
+                selArr[3] = option.id;
             }
             //Add the clicked select styles to the select element
             select.classList.remove('select-clicked');
@@ -165,6 +166,7 @@ function PageTransitions() {
                 modalImg.src = element.getElementsByTagName('img')[0].src;
                 captionText.innerHTML = element.getElementsByClassName('hover-items')[0].innerHTML;
                 controls.style.visibility = "hidden";
+                upperbtns.style.visibility = "hidden";
             }
         }
     })
@@ -175,6 +177,8 @@ function PageTransitions() {
     span.onclick = function() {
     modal.style.display = "none";
     controls.style.visibility = "visible";
+    upperbtns.style.visibility = "visible";
+
     }
 }
 
@@ -182,31 +186,31 @@ function PageTransitions() {
         var aboutElement = e.target;
         var aboutItem = aboutElement.closest(".about-item");
         if(aboutItem) {
-            document.getElementById("li-all-materials").click();
-            document.getElementById("li-all-years").click();
+            document.getElementById("all-materials").click();
+            document.getElementById("all-years").click();
             var aboutId = aboutItem.id;
             if(aboutId == "about-illustrations") {
-                document.getElementById("li-all-themes").click();
-                document.getElementById("li-illustrations").click();
+                document.getElementById("all-themes").click();
+                document.getElementById("illustrations").click();
                 //filterSelection("all-types landscapes all-materials all-years");
                 //selected.classList.contains("select-theme")              
             }
             else {
-                document.getElementById("li-all-types").click();
+                document.getElementById("all-types").click();
                 if(aboutId == "about-landscapes") {
-                    document.getElementById("li-landscapes").click();
+                    document.getElementById("landscapes").click();
                 }
                 else if(aboutId == "about-still-life") {
-                    document.getElementById("li-still-life").click();
+                    document.getElementById("still-life").click();
                 }
                 else if(aboutId == "about-portraits") {
-                    document.getElementById("li-portraits").click();
+                    document.getElementById("portraits").click();
                 }
                 else if(aboutId == "about-iconography") {
-                    document.getElementById("li-iconography").click();
+                    document.getElementById("iconography").click();
                 }
                 else if(aboutId == "about-reproductions") {
-                    document.getElementById("li-reproductions").click();
+                    document.getElementById("reproductions").click();
                 }
             }
             document.getElementById("portfolio-btn").click();
