@@ -1525,4 +1525,16 @@ section {
     max-height: 600px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .controls {
+    max-height: 65px;
+  }
+  .controls .control {
+    margin: 0.01rem 0.01rem;
+    padding: 0.3rem;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
 /*# sourceMappingURL=styles.css.map */
