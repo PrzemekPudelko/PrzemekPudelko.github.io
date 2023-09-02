@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,800;1,700&display=swap" rel="stylesheet">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <script>
         let hasSetLang = sessionStorage.getItem("hasSetLang");
         if(hasSetLang == null) {
@@ -34,15 +36,50 @@
                 </div>
             </div>
             <div class="right-header">
-                <h1 class="name">
-                    Hi, I'm <span>Olga Pudelko.</span>
-                    An Artist in Poland.
-                </h1>
-                <p>
-                    Art is a way to understand myself and show emotion and delicacy through my work.
-                    I hope you will find my paintings, illustrations, and drawings beautiful and they will give you pleasure.
-                </p>
+                <!-- <div class="introduction"> -->
+                    <h1 class="name">
+                        Hi, I'm <span>Olga Pudelko.</span>
+                        An Artist in Poland.
+                    </h1>
+                    <p>
+                        Art is a way to understand myself and show emotion and delicacy through my work.
+                        I hope you will find my paintings, illustrations, and drawings beautiful and they will give you pleasure.
+                    </p>
             </div>
+                <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                     Indicators 
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                  
+                     Wrapper for slides 
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <img src="img/img_036.jpg" alt="img_036">
+                      </div>
+                  
+                      <div class="item">
+                        <img src="img/img_035.jpg" alt="img_035">
+                      </div>
+                  
+                      <div class="item">
+                        <img src="img/img_034.jpg" alt="img_034">
+                      </div>
+                    </div>
+                  
+                     Left and right controls 
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div> 
+            </div> -->
         </div>
 
     </header>
@@ -55,7 +92,10 @@
                 <div class="left-about">
                     <h4>Information about me</h4>
                     <p>
-                        I am a Belarusian National, formerly a Customs Officer, and now live in Rzeszów, Poland with my Polish husband. The first time I was inspired by art was at my university. 
+                        I am a Belarusian National, formerly a Customs Officer, and now live in Rzeszów, Poland with my Polish husband. As of October 2023, I am studying Painting 
+                        at the Institute of Fine Arts of the University of Rzeszów. 
+                        <br/> <br/>
+                        The first time I was inspired by art was at my university in Minsk. 
                         There, I saw many different styles from many different Belarusian Artists. I wanted to look at those paintings more and more and find my artwork among them.
                         Since my childhood I had painted regularly, but until this time it was only a hobby. I began searching for something artistic, something special for myself. It was very difficult. <br/> <br/>
                         Later, being in Poland, I found that special kind of art. I've understood that I appreciate the Old Masters' techniques and am striving to learn those techniques.
@@ -74,7 +114,7 @@
                                 <img src="img/about_img_018.jpg" alt="">
                             </div>
                             <div class="abt-quad">
-                                <img src="img/about_img_021.jpg" alt="">
+                                <img src="img/about_img_041.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -204,6 +244,7 @@
                         <li id="iconography">Iconography</li>
                         <li id="abstract">Abstract</li>
                         <li id="animal">Animal</li>
+                        <li id="botany">Botany</li>
                         <li id="architecture">Architecture</li>
                         <li id="figure">Figure</li>
                         <li id="reproductions">Reproductions</li>
@@ -238,7 +279,62 @@
                 </div>
             </div>
             <div class="portfolio">
-                <div class="portfolio-item paintings still-life 2023 oil" id="img_036">
+                <div class="portfolio-item paintings landscapes 2023 oil" id="img_041">
+                    <div class="image">
+                        <img src="img/img_041.jpg" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>View of the Wisłok River</h3>
+                        <h4>Oil Paint on Canvas</h4>
+                        <h4>70 x 100 cm</h4>
+                        <h4>2023</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item paintings still-life botany 2023 oil" id="img_040">
+                    <div class="image">
+                        <img src="img/img_040.jpg" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Yellow Rose in a Vase</h3>
+                        <h4>Oil Paint on Canvas</h4>
+                        <h4>30 x 20 cm</h4>
+                        <h4>2023</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item paintings still-life botany 2023 acrylic" id="img_039">
+                    <div class="image">
+                        <img src="img/img_039.jpg" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Bouquet of Flowers with a Basket</h3>
+                        <h4>Acrylic Paint on Canvas</h4>
+                        <h4>50 x 40 cm</h4>
+                        <h4>2023</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item paintings landscape 2023 acrylic" id="img_038">
+                    <div class="image">
+                        <img src="img/img_038.jpg" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Haystacks</h3>
+                        <h4>Acrylic Paint on Canvas on Cardboard</h4>
+                        <h4>40 x 50 cm</h4>
+                        <h4>2023</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item paintings botany 2023 acrylic" id="img_037">
+                    <div class="image">
+                        <img src="img/img_037.jpg" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Rosebush</h3>
+                        <h4>Acrylic Paint on Canvas</h4>
+                        <h4>25 x 25 cm</h4>
+                        <h4>2023</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item paintings still-life botany 2023 oil" id="img_036">
                     <div class="image">
                         <img src="img/img_036.jpg" alt="">
                     </div>
@@ -249,7 +345,7 @@
                         <h4>2023</h4>
                     </div>
                 </div>
-                <div class="portfolio-item paintings still-life 2023 oil" id="img_035">
+                <div class="portfolio-item paintings still-life botany 2023 oil" id="img_035">
                     <div class="image">
                         <img src="img/img_035.jpg" alt="">
                     </div>
@@ -260,7 +356,7 @@
                         <h4>2023</h4>
                     </div>
                 </div>
-                <div class="portfolio-item paintings still-life reproductions 2023 oil" id="img_034">
+                <div class="portfolio-item paintings still-life botany reproductions 2023 oil" id="img_034">
                     <div class="image">
                         <img src="img/img_034.jpg" alt="">
                     </div>
@@ -568,7 +664,7 @@
                         <h4>2022</h4>
                     </div>
                 </div>
-                <div class="portfolio-item paintings abstract 2022 acrylic" id="img_004">
+                <div class="portfolio-item paintings botany 2022 acrylic" id="img_004">
                     <div class="image">
                         <img src="img/img_004.jpg" alt="">
                     </div>
