@@ -249,11 +249,11 @@ function PageTransitions() {
                 else if(aboutId == "about-portraits") {
                     document.getElementById("portraits").click();
                 }
-                else if(aboutId == "about-iconography") {
-                    document.getElementById("iconography").click();
+                else if(aboutId == "about-religious") {
+                    document.getElementById("religious").click();
                 }
-                else if(aboutId == "about-reproductions") {
-                    document.getElementById("reproductions").click();
+                else if(aboutId == "about-studies") {
+                    document.getElementById("studies").click();
                 }
             }
             document.getElementById("portfolio-btn").click();
