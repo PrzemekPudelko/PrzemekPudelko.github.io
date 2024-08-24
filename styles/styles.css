@@ -1840,5 +1840,8 @@ section {
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
   }
+  .right-header {
+    min-height: 800px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
