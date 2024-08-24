@@ -19,6 +19,7 @@ const sectrightAbout = document.querySelector('.right-about');
 const sectPortfolio = document.querySelector('.portfolio');
 const portfolioImages = sectPortfolio.querySelectorAll('.portfolio-item');
 const dropdowns = document.querySelectorAll('.dropdown');
+const slideshow = document.querySelector('.slider_container');
 
 var controls = document.getElementsByClassName('controls')[0];
 var modal = document.getElementById('imgModal');
@@ -192,6 +193,19 @@ function PageTransitions() {
     else if (document.documentElement.lang === "en") {
         window.location = 'pl-index.html';
     }
+    })
+
+    slideshow.addEventListener('click',(e) => {
+        const thisElement = e.target;
+        const slide = thisElement.closest('.slide');
+        if (slide) {
+            var id = slide.id;
+            if (id) {
+                var port_id = id.replace("slide_", "");
+                const element = document.getElementById(port_id);
+                element.click();
+            }
+        }
     })
 
     //Enlarge Image
