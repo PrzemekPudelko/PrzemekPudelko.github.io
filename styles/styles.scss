@@ -319,19 +319,6 @@ section {
             transform: translate(-50%, -50%);
             margin: 1px;
           }
-          .slide .caption {
-            position: absolute;
-            left: 0;
-            bottom: 5%;
-            font-size: 1rem;
-            font-weight: 100;
-            color: white;
-            text-transform: capitalize;
-            background: rgba(0, 0, 0, 0.348);
-            // backdrop-filter: blur(10px);
-            padding: 1rem 5rem;
-            border-radius: 0 2rem 2rem 0;
-          }
           @keyframes sliding {
             0% {
               transform: translateX(0%);
